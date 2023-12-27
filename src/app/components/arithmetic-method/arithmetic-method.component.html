@@ -1,0 +1,30 @@
+<mat-card class="card">
+  <mat-card-content>
+    <form [formGroup]="arithmeticMethod" class="form">
+      <mat-form-field>
+        <mat-label>Input number</mat-label>
+        <input matInput formControlName="number" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Select Arithmetic method</mat-label>
+        <mat-select formControlName="method">
+          <mat-option value="add">Add</mat-option>
+          <mat-option value="remove">Remove</mat-option>
+          <mat-option value="reset">Reset</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div class="footer">
+        <button
+          mat-raised-button
+          type="submit"
+          class="btn"
+          color="primary"
+          (click)="result()"
+        >
+          Result
+        </button>
+        <span class="result">= {{ resultValue ? resultValue : 0 }}</span>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>
