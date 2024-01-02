@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ArithmeticMethodComponent } from './components/arithmetic-method/arithmetic-method.component';
+import { ArithmeticMethodComponent } from './components/arithmetic-method/component/arithmetic-method.component';
 
 const routes: Routes = [
   {
@@ -11,12 +11,19 @@ const routes: Routes = [
       ),
   },
   {
-    path: 'users',
+    path: 'blogs',
     loadChildren: () =>
-      import('./components/arithmetic-method/arithmetic-method.module').then(
-        (m) => m.ArithmeticMethodModule
+      import('./components/blog/blog.module').then(
+        (m) => m.BlogModule
       ),
   },
+  // {
+  //   path: 'users',
+  //   loadChildren: () =>
+  //     import('./components/arithmetic-method/arithmetic-method.module').then(
+  //       (m) => m.ArithmeticMethodModule
+  //     ),
+  // },
   {
     path: '',
     pathMatch: 'full',

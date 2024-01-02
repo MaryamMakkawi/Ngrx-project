@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ArithmeticMethodComponent } from './component/arithmetic-method.component';
+import { BlogComponent } from './component/blog/blog.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: ArithmeticMethodComponent,
+    component: BlogComponent,
   },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
-export class ArithmeticMethodRoutingModule {}
+export class BlogRoutingModule { }

@@ -16,14 +16,21 @@
       <div class="footer">
         <button
           mat-raised-button
+          [disabled]="!arithmeticMethod.valid"
           type="submit"
           class="btn"
           color="primary"
           (click)="result()"
         >
-          Result
+          Result =
         </button>
-        <span class="result">= {{ resultValue ? resultValue : 0 }}</span>
+        <span class="result">
+          {{
+            (resultValue$ | async)
+              ? (resultValue$ | async)
+              : 0
+          }}
+        </span>
       </div>
     </form>
   </mat-card-content>
