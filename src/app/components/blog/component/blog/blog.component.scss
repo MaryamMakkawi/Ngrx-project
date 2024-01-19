@@ -1,0 +1,25 @@
+.cards {
+  margin: 0 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 1rem;
+  .card {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    .content {
+      min-height: 100px;
+      max-height: 100px;
+      height: 100px;
+      overflow-y: scroll;
+    }
+    .footer {
+      display: flex;
+      align-items: flex-end;
+      justify-items: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+  }
+}
+.add-btn {
+  margin: 0.5rem 1rem;
+}

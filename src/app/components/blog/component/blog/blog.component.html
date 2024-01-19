@@ -1,1 +1,39 @@
-<p>blog works!</p>
+<button
+  mat-raised-button
+  class="btn add-btn"
+  color="primary"
+  (click)="openDialog('add')"
+>
+  Add Blog
+</button>
+<div class="cards">
+  <mat-card class="card" *ngFor="let blog of (blogList$ | async)?.blogs">
+    <mat-card-header>
+      <mat-card-subtitle>{{ blog.id }}</mat-card-subtitle>
+      <mat-card-title>{{ blog.title }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="content">
+      <p>
+        {{ blog.description }}
+      </p>
+    </mat-card-content>
+    <mat-card-actions class="footer">
+      <button
+        mat-raised-button
+        class="btn"
+        color="accent"
+        (click)="openDialog('update', blog)"
+      >
+        Update Blog
+      </button>
+      <button
+        mat-raised-button
+        class="btn"
+        color="warn"
+        (click)="deleteBlog(blog)"
+      >
+        Delete Blog
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

@@ -7,8 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
 import { ArithmeticMethodModule } from './components/arithmetic-method/arithmetic-method.module';
 import { StoreModule } from '@ngrx/store';
-import { counterReducer } from './components/arithmetic-method/store/counter/counter.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { AppState } from './shared/AppState/App.state';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,8 +18,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     BrowserAnimationsModule,
     ArithmeticMethodModule,
     SharedModule,
-    StoreModule.forRoot({counter:counterReducer}),
-    StoreDevtoolsModule.instrument({maxAge:25,logOnly:!isDevMode()})
+    StoreModule.forRoot(AppState),
+    StoreDevtoolsModule.instrument(),
   ],
   providers: [],
   bootstrap: [AppComponent],

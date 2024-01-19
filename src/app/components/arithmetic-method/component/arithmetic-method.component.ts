@@ -4,7 +4,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { actionMethod } from 'src/app/components/arithmetic-method/store/counter/counter.action';
 import { getCounter } from 'src/app/components/arithmetic-method/store/counter/counter.selector';
-import { ICounterState } from 'src/app/components/arithmetic-method/store/counter/model.interface';
+import { IAppState } from 'src/app/shared/AppState/AppState.interface';
 
 @Component({
   selector: 'app-arithmetic-method',
@@ -17,7 +17,7 @@ export class ArithmeticMethodComponent implements OnInit {
 
   constructor(
     private _fb: FormBuilder,
-    private _store: Store<{ counter: ICounterState }>
+    private _store: Store<IAppState>
   ) {}
 
   ngOnInit() {

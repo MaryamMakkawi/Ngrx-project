@@ -1,0 +1,50 @@
+<mat-dialog-content class="toast">
+  <form [formGroup]="form">
+    <div class="toast-container">
+      <!-- Header -->
+      <div class="toast-header">
+        <span class="title">
+          {{ editBlog.type === "update" ? "update Blog" : "Add Blog" }}
+        </span>
+      </div>
+      <div>
+        <div class="contant">
+          <!-- Body -->
+          <div class="toast-content">
+            <mat-form-field>
+              <mat-label>Title</mat-label>
+              <input matInput formControlName="title" />
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Description</mat-label>
+              <input matInput formControlName="description" />
+            </mat-form-field>
+          </div>
+
+          <div class="footer">
+            <!-- save -->
+            <button
+              mat-stroked-button
+              class="btn"
+              color="primary"
+              type="button"
+              (click)="actionBlog('save')"
+            >
+              Save
+            </button>
+            <!-- cancel -->
+            <button
+              mat-stroked-button
+              class="btn"
+              color="warn"
+              type="button"
+              (click)="actionBlog('cancel')"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</mat-dialog-content>
