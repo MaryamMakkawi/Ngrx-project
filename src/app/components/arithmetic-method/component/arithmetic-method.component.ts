@@ -38,7 +38,7 @@ export class ArithmeticMethodComponent implements OnInit {
     }
     this._store.dispatch(
       actionMethod({
-        value: +this.arithmeticMethod.value.number,
+        value: this.arithmeticMethod.value.number,
         method: this.arithmeticMethod.value.method,
       })
     );

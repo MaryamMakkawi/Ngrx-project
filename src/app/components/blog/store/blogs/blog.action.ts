@@ -1,13 +1,16 @@
 import { createAction, props } from '@ngrx/store';
 import { IBlogState } from './blog.interface';
 
-export const loadBlogs = createAction('loadBlogs');
-export const addBlog = createAction('addBlog', props<{ blog: IBlogState }>());
+export const loadBlogs = createAction('[Blog] Load');
+export const addBlog = createAction(
+  '[Blog] Add',
+  props<{ blog: IBlogState }>()
+);
 export const updateBlog = createAction(
-  'updateBlog',
+  '[Blog] Update',
   props<{ blog: IBlogState }>()
 );
 export const deleteBlog = createAction(
-  'deleteBlog',
+  '[Blog] delete',
   props<{ blogDelete: IBlogState }>()
 );

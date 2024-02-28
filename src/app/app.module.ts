@@ -9,6 +9,8 @@ import { ArithmeticMethodModule } from './components/arithmetic-method/arithmeti
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { AppState } from './shared/AppState/App.state';
+import { EffectsModule } from '@ngrx/effects';
+import { UserEffects } from './components/users/store/user.effects';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,6 +22,7 @@ import { AppState } from './shared/AppState/App.state';
     SharedModule,
     StoreModule.forRoot(AppState),
     StoreDevtoolsModule.instrument(),
+    EffectsModule.forRoot([UserEffects])
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,0 +1,37 @@
+<button mat-raised-button class="btn add-btn" color="primary">
+  <!-- (click)="openDialog('add')" -->
+  Add User
+</button>
+<div class="cards">
+  <mat-card class="card" *ngFor="let user of (userList$ | async)">
+    <mat-card-header>
+      <mat-card-subtitle>Sequence number: {{ user.id }}</mat-card-subtitle>
+      <mat-card-title>Name :{{ user.name }},{{ user.username }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="content">
+      <p>
+        Address :
+        <span> {{ user.address.city }}</span>
+        <span> {{ user.address.street }}</span>
+      </p>
+      <p>
+        Email :
+        {{ user.email }}
+      </p>
+      <p>
+        phone :
+        {{ user.phone }}
+      </p>
+    </mat-card-content>
+    <mat-card-actions class="footer">
+      <button mat-raised-button class="btn" color="accent">
+        <!-- (click)="openDialog('update', User)" -->
+        Update User
+      </button>
+      <button mat-raised-button class="btn" color="warn">
+        Delete User
+        <!-- (click)="deleteUser(User)" -->
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

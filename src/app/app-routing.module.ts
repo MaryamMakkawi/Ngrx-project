@@ -17,13 +17,13 @@ const routes: Routes = [
         (m) => m.BlogModule
       ),
   },
-  // {
-  //   path: 'users',
-  //   loadChildren: () =>
-  //     import('./components/arithmetic-method/arithmetic-method.module').then(
-  //       (m) => m.ArithmeticMethodModule
-  //     ),
-  // },
+  {
+    path: 'users',
+    loadChildren: () =>
+      import('./components/users/users.module').then(
+        (m) => m.UsersModule
+      ),
+  },
   {
     path: '',
     pathMatch: 'full',

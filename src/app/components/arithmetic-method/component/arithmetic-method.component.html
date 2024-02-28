@@ -3,7 +3,7 @@
     <form [formGroup]="arithmeticMethod" class="form">
       <mat-form-field>
         <mat-label>Input number</mat-label>
-        <input matInput formControlName="number" />
+        <input matInput formControlName="number" type="number" />
       </mat-form-field>
       <mat-form-field>
         <mat-label>Select Arithmetic method</mat-label>
@@ -25,11 +25,7 @@
           Result =
         </button>
         <span class="result">
-          {{
-            (resultValue$ | async)
-              ? (resultValue$ | async)
-              : 0
-          }}
+          {{ (resultValue$ | async) ? (resultValue$ | async) : 0 }}
         </span>
       </div>
     </form>
